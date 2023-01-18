@@ -11,6 +11,7 @@ interface InputProps {
   name: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  supportingText?: string;
 }
 
 const Input: React.FunctionComponent<InputProps> = ({
@@ -22,14 +23,17 @@ const Input: React.FunctionComponent<InputProps> = ({
   name,
   onChange,
   value,
+  supportingText,
 }) => {
   return (
     <div className={"py-1"}>
-      <label className={"pr-3 w-36 inline-block"} htmlFor={htmlFor}>
+      <label className={"pr-3 w-36 inline-block text-right"} htmlFor={htmlFor}>
         {label}
       </label>
       <input
-        className={"border-gray-300 border-2 w-64 rounded-md px-2 py-1"}
+        className={
+          "border-gray-300 border-2 w-64 rounded-md px-2 py-1 inline-block"
+        }
         type={type}
         id={id}
         name={name}
@@ -37,6 +41,9 @@ const Input: React.FunctionComponent<InputProps> = ({
         onChange={onChange}
         value={value}
       />
+      {supportingText && (
+        <h6 className={"inline-block ml-3"}>{supportingText}</h6>
+      )}
     </div>
   );
 };
