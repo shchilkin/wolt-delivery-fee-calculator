@@ -26,7 +26,6 @@ Run the following command to start the development server:
 yarn start
 ```
 
-
 ## Specifications (provided by [Wolt](https://wolt.com))
 
 Rules for calculating a delivery fee
@@ -116,11 +115,14 @@ customize it when you are ready for it.
 Licensed under the MIT License, Copyright © 2022 Aleksandr Shchilkin See [LICENCE](LICENCE) for more information.
 
 ## Acknowledgements
+
 Thanks to [Wolt](https://wolt.com/) for providing the assignment.
 
 ## Screenshots
-Delivery fee preview UI
-![Delivery fee preview UI](./screenshots/delivery-fee-preview.png)
 
 Delivery fee calculator UI
-![Delivery fee calculator UI](./screenshots/delivery-fee-calculator.png)
+![Delivery fee calculator UI](screenshots/calculator.png?raw=true "Delivery fee calculator UI")
+
+Delivery fee preview UI
+![Delivery fee preview UI](screenshots/preview.png?raw=true "Delivery fee preview UI")
+
