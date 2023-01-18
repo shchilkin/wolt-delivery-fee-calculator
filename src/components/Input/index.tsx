@@ -12,6 +12,8 @@ interface InputProps {
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   supportingText?: string;
+  min?: string;
+  max?: string;
 }
 
 const Input: React.FunctionComponent<InputProps> = ({
@@ -24,6 +26,8 @@ const Input: React.FunctionComponent<InputProps> = ({
   onChange,
   value,
   supportingText,
+  min,
+  max,
 }) => {
   return (
     <div className={"py-1"}>
@@ -40,6 +44,8 @@ const Input: React.FunctionComponent<InputProps> = ({
         step={step}
         onChange={onChange}
         value={value}
+        min={min}
+        max={max}
       />
       {supportingText && (
         <h6 className={"inline-block ml-3"}>{supportingText}</h6>
