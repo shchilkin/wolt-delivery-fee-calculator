@@ -4,8 +4,8 @@ import minMaxValueGuard from "../../../../utils/minMaxValueGuard";
 import formatDate from "../../../../utils/formatDate";
 import React, { ChangeEvent } from "react";
 import { useSnackbar } from "notistack";
-import HelperChip from "../../../HelperChip";
-import HelperChipContainer from "../../../HelperChipContainer";
+import FrequentlyUsedValueChip from "../../../FrequentlyUsedValueChip";
+import FrequentlyUsedValueChipContainer from "../../../FrequentlyUsedValueChipChipContainer";
 
 interface DeliveryFeeCalculatorFragmentProps
   extends DeliveryFeeCalculatorChildProps {
@@ -13,7 +13,7 @@ interface DeliveryFeeCalculatorFragmentProps
   setDeliveryDistance: (value: number) => void;
   setDate: (value: Date) => void;
   setAmountOfItems: (value: number) => void;
-  showHelpers: boolean;
+  showFrequentlyUsed: boolean;
 }
 
 export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeCalculatorFragmentProps> = ({
@@ -26,7 +26,7 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
   setDeliveryDistance,
   setDate,
   setAmountOfItems,
-  showHelpers,
+  showFrequentlyUsed,
 }) => {
   const { enqueueSnackbar } = useSnackbar();
   const cartAmountHelperValues = [10, 15, 25, 50, 100];
@@ -126,16 +126,16 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
           max={"100000"}
           onChange={handleCartValueChange}
         />
-        {showHelpers && (
-          <HelperChipContainer>
+        {showFrequentlyUsed && (
+          <FrequentlyUsedValueChipContainer>
             {cartAmountHelperValues.reverse().map((value) => (
-              <HelperChip
+              <FrequentlyUsedValueChip
                 value={value}
                 setValue={setCartValue}
                 type={"cartValue"}
               />
             ))}
-          </HelperChipContainer>
+          </FrequentlyUsedValueChipContainer>
         )}
 
         <Input
@@ -150,16 +150,16 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
           onChange={handleDeliveryDistanceChange}
         />
 
-        {showHelpers && (
-          <HelperChipContainer>
+        {showFrequentlyUsed && (
+          <FrequentlyUsedValueChipContainer>
             {deliveryDistanceHelpersValues.reverse().map((value) => (
-              <HelperChip
+              <FrequentlyUsedValueChip
                 value={value}
                 setValue={setDeliveryDistance}
                 type={"deliveryDistance"}
               />
             ))}
-          </HelperChipContainer>
+          </FrequentlyUsedValueChipContainer>
         )}
 
         <Input
@@ -172,16 +172,16 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
           value={amountOfItems.toString()}
           onChange={handleAmountOfItemsChange}
         />
-        {showHelpers && (
-          <HelperChipContainer>
+        {showFrequentlyUsed && (
+          <FrequentlyUsedValueChipContainer>
             {amountOfItemsHelperValues.reverse().map((value) => (
-              <HelperChip
+              <FrequentlyUsedValueChip
                 value={value}
                 setValue={setAmountOfItems}
                 type={"amountOfItems"}
               />
             ))}
-          </HelperChipContainer>
+          </FrequentlyUsedValueChipContainer>
         )}
 
         <Input

@@ -9,7 +9,10 @@ const DeliveryCalculator = () => {
   const [cartValue, setCartValue] = React.useState<number>(0);
   const [deliveryDistance, setDeliveryDistance] = React.useState<number>(0);
   const [amountOfItems, setAmountOfItems] = React.useState<number>(0);
-  const [showHelpers, setShowHelpers] = React.useState<boolean>(false);
+  const [
+    showFrequentlyUsedValue,
+    setShowFrequentlyUsedValue,
+  ] = React.useState<boolean>(false);
 
   return (
     <div className={"flex flex-col gap-3"}>
@@ -37,7 +40,7 @@ const DeliveryCalculator = () => {
             setAmountOfItems={setAmountOfItems}
             setCartValue={setCartValue}
             setDate={setDate}
-            showHelpers={showHelpers}
+            showFrequentlyUsed={showFrequentlyUsedValue}
           />
         )}
       </div>
@@ -49,9 +52,9 @@ const DeliveryCalculator = () => {
         >
           <div style={{ display: "flex", alignItems: "center" }}>
             <Toggle
-              label={"Show helper chips"}
-              value={showHelpers}
-              onChange={setShowHelpers}
+              label={"Show frequently used values"}
+              value={showFrequentlyUsedValue}
+              onChange={setShowFrequentlyUsedValue}
             />
           </div>
         </div>

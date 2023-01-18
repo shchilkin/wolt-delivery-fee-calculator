@@ -1,6 +1,6 @@
 import React from "react";
 
-interface HelperChipProps {
+interface FrequentlyUsedValueChipProps {
   value: number;
   setValue: (value: number) => void;
   type: "cartValue" | "deliveryDistance" | "amountOfItems";
@@ -12,7 +12,7 @@ const typeToLabel = {
   amountOfItems: "",
 };
 
-const HelperChip: React.FunctionComponent<HelperChipProps> = ({
+const FrequentlyUsedValueChip: React.FunctionComponent<FrequentlyUsedValueChipProps> = ({
   value,
   setValue,
   type,
@@ -32,4 +32,4 @@ const HelperChip: React.FunctionComponent<HelperChipProps> = ({
   );
 };
 
-export default HelperChip;
+export default FrequentlyUsedValueChip;

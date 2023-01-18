@@ -3,6 +3,9 @@
 A frontend application for calculating delivery price using provided specifications. Done as a pre-assignment for summer
 2023 Wolt engineering internship.
 
+## project structure
+
+
 ## Prerequisites
 
 This project uses [Yarn](https://yarnpkg.com/) as a package manager. You can install it by following the instructions on
@@ -110,13 +113,14 @@ customize it when you are ready for it.
 - [Notistack](https://iamhosseindhv.com/notistack) - Library for displaying notifications
 - [vercel](https://vercel.com/) - For hosting the application
 
+## Acknowledgements
+
+Thanks to [Wolt](https://wolt.com/) for providing the assignment.
+
 ## License
 
 Licensed under the MIT License, Copyright © 2022 Aleksandr Shchilkin See [LICENCE](LICENCE) for more information.
 
-## Acknowledgements
-
-Thanks to [Wolt](https://wolt.com/) for providing the assignment.
 
 ## Screenshots
 
@@ -125,6 +129,9 @@ Default delivery fee calculator UI
 
 Delivery fee calculator UI with chips
 ![Delivery fee calculator UI with chips](screenshots/calculator_with_chips.png?raw=true "Delivery fee calculator UI with chips")
+
+Error notification when user enters invalid input
+![Error notification when user enters invalid input](screenshots/calculator_error_snackbar.png?raw=true "Error notification when user enters invalid input")
 
 Delivery fee preview UI
 ![Delivery fee preview UI](screenshots/preview.png?raw=true "Delivery fee preview UI")
