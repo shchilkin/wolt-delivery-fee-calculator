@@ -9,6 +9,8 @@ interface InputProps {
   step: string;
   id: string;
   name: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FunctionComponent<InputProps> = ({
@@ -18,6 +20,8 @@ const Input: React.FunctionComponent<InputProps> = ({
   step,
   id,
   name,
+  onChange,
+  value,
 }) => {
   return (
     <div className={"py-1"}>
@@ -25,11 +29,13 @@ const Input: React.FunctionComponent<InputProps> = ({
         {label}
       </label>
       <input
-        className={"border-gray-300 border-2 rounded-md px-2 py-1"}
+        className={"border-gray-300 border-2 w-64 rounded-md px-2 py-1"}
         type={type}
         id={id}
         name={name}
         step={step}
+        onChange={onChange}
+        value={value}
       />
     </div>
   );

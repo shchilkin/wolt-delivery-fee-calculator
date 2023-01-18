@@ -3,7 +3,7 @@ import DeliveryCalculator from "./components/DeliveryCalculator";
 
 function App() {
   return (
-    <div className={"h-screen flex justify-center items-center"}>
+    <div className={"h-screen flex justify-center items-center bg-gray-300"}>
       <DeliveryCalculator />
     </div>
   );
