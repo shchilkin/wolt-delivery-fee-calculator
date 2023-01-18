@@ -13,9 +13,13 @@ const calculateDeliveryFee = (
   const baseDeliveryFee = 1;
   const deliveryDistanceFee = deliveryDistanceCost(distance);
   const numberOfItemsFee = numberOfItemsCost(numberOfItems);
+  const lessThan10EurOrderSurcharge = cartValue < 10 ? 10 - cartValue : 0;
 
   const deliveryFee = withFridayRushFee(
-    baseDeliveryFee + deliveryDistanceFee + numberOfItemsFee,
+    baseDeliveryFee +
+      deliveryDistanceFee +
+      numberOfItemsFee +
+      lessThan10EurOrderSurcharge,
     date
   );
 

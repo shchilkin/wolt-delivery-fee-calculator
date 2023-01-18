@@ -120,8 +120,11 @@ Thanks to [Wolt](https://wolt.com/) for providing the assignment.
 
 ## Screenshots
 
-Delivery fee calculator UI
+Default delivery fee calculator UI
 ![Delivery fee calculator UI](screenshots/calculator.png?raw=true "Delivery fee calculator UI")
+
+Delivery fee calculator UI with chips
+![Delivery fee calculator UI with chips](screenshots/calculator_with_chips.png?raw=true "Delivery fee calculator UI with chips")
 
 Delivery fee preview UI
 ![Delivery fee preview UI](screenshots/preview.png?raw=true "Delivery fee preview UI")
