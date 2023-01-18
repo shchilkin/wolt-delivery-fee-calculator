@@ -24,13 +24,12 @@ const DeliveryCalculator = () => {
         padding: "24px 24px",
         display: "inline-block",
         minWidth: "400px",
-        minHeight: "300px",
       }}
     >
       {showResult ? (
         <div>
-          <h1>
-            Delivery Price:
+          <h3 className={"font-semibold"}>Delivery Price for the order is:</h3>
+          <h1 className={"text-5xl font-bold mt-2 mb-4"}>
             {calculateDeliveryFee(
               cartValue,
               deliveryDistance,
@@ -39,6 +38,10 @@ const DeliveryCalculator = () => {
             )}
             €
           </h1>
+          <p>
+            {amountOfItems} items with cart price of {cartValue}€ and delivery
+            distance of {deliveryDistance}m
+          </p>
           <button
             className={"mt-4 bg-white text-sky-400 hover:bg-sky-50"}
             style={{
@@ -78,13 +81,13 @@ const DeliveryCalculator = () => {
                 const minCartValue = 0;
                 const maxCartValue = 100000;
 
-                if (minCartValue >= Number(e.target.value)) {
+                if (minCartValue > Number(e.target.value)) {
                   enqueueSnackbar("Minimal cart value is 0 €", {
                     variant: "error",
                   });
                 }
 
-                if (maxCartValue <= Number(e.target.value)) {
+                if (maxCartValue < Number(e.target.value)) {
                   enqueueSnackbar("Maximal cart value is 100000 €", {
                     variant: "error",
                   });
@@ -113,13 +116,13 @@ const DeliveryCalculator = () => {
                 const minDeliveryDistance = 0;
                 const maxDeliveryDistance = 50000; // 50km
 
-                if (minDeliveryDistance >= Number(e.target.value)) {
+                if (minDeliveryDistance > Number(e.target.value)) {
                   enqueueSnackbar("Minimal delivery distance is 0 m", {
                     variant: "error",
                   });
                 }
 
-                if (maxDeliveryDistance <= Number(e.target.value)) {
+                if (maxDeliveryDistance < Number(e.target.value)) {
                   enqueueSnackbar("Maximal delivery distance is 50000 m", {
                     variant: "error",
                   });
@@ -186,13 +189,16 @@ const DeliveryCalculator = () => {
             <input
               type="submit"
               value="Calculate delivery fee"
-              className={"mt-4 bg-sky-400 text-white hover:bg-sky-300"}
-              style={{
-                borderRadius: "8px",
-                padding: "8px 16px",
-                border: "none",
-                fontWeight: "bold",
-              }}
+              className={
+                "disabled:bg-gray-300 disabled:cursor-not-allowed" +
+                " " +
+                "font-bold mt-4 bg-sky-400 text-white rounded-md px-4 py-2 border-none" +
+                " " +
+                "enabled:hover:bg-sky-300"
+              }
+              disabled={
+                amountOfItems === 0 || cartValue === 0 || deliveryDistance === 0
+              }
             />
           </form>
         </>
