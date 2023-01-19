@@ -5,6 +5,16 @@ A frontend application for calculating delivery price using provided specificati
 
 ## project structure
 
+    .
+    ├── public            # Static files
+    ├── screenshots       # Screenshots of the application    
+    ├── src               # Source files
+    │   ├── components          # React components
+    │   ├── shared              # Shared code
+    │   └── utils               # Utility functions & tests
+    ├── package.json
+    ├── LICENSE
+    └── README.md
 
 ## Prerequisites
 
@@ -120,7 +130,6 @@ Thanks to [Wolt](https://wolt.com/) for providing the assignment.
 ## License
 
 Licensed under the MIT License, Copyright © 2022 Aleksandr Shchilkin See [LICENCE](LICENCE) for more information.
-
 
 ## Screenshots
 
