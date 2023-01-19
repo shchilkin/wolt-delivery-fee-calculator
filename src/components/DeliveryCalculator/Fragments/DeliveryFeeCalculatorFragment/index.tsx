@@ -1,11 +1,11 @@
 import { DeliveryFeeCalculatorChildProps } from "../../../../shared";
 import Input from "../../../Input";
-import minMaxValueGuard from "../../../../utils/minMaxValueGuard";
 import formatDate from "../../../../utils/formatDate";
 import React, { ChangeEvent } from "react";
 import { useSnackbar } from "notistack";
 import FrequentlyUsedValueChip from "../../../FrequentlyUsedValueChip";
 import FrequentlyUsedValueChipContainer from "../../../FrequentlyUsedValueChipChipContainer";
+import isValidValue from "../../../../utils/isValidValue";
 
 interface DeliveryFeeCalculatorFragmentProps
   extends DeliveryFeeCalculatorChildProps {
@@ -48,10 +48,8 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
         variant: "error",
       });
     }
-
-    setCartValue(
-      minMaxValueGuard(parseFloat(e.target.value), minCartValue, maxCartValue)
-    );
+    isValidValue(Number(e.target.value), minCartValue, maxCartValue) &&
+      setCartValue(Number(e.target.value));
     setShowResult(false);
   };
 
@@ -71,13 +69,11 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
       });
     }
 
-    setDeliveryDistance(
-      minMaxValueGuard(
-        parseFloat(e.target.value),
-        minDeliveryDistance,
-        maxDeliveryDistance
-      )
-    );
+    isValidValue(
+      parseFloat(e.target.value),
+      minDeliveryDistance,
+      maxDeliveryDistance
+    ) && setDeliveryDistance(parseFloat(e.target.value));
     setShowResult(false);
   };
 
@@ -94,13 +90,13 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
         variant: "error",
       });
     }
-    setAmountOfItems(
-      minMaxValueGuard(
-        parseFloat(e.target.value),
-        minAmountOfItems,
-        maxAmountOfItems
-      )
-    );
+
+    isValidValue(
+      parseFloat(e.target.value),
+      minAmountOfItems,
+      maxAmountOfItems
+    ) && setAmountOfItems(parseFloat(e.target.value));
+
     setShowResult(false);
   };
 
@@ -142,8 +138,10 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
           id={"deliveryDistance"}
           name={"deliveryDistance"}
           supportingText={"m"}
-          step={"0.01"}
+          step={"1"}
           type={"number"}
+          min={"0"}
+          max={"50000"}
           label={"Delivery Distance"}
           htmlFor={"deliveryDistance"}
           value={deliveryDistance.toString()}
@@ -166,6 +164,8 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
           id={"amountOfItems"}
           name={"amountOfItems"}
           step={"1"}
+          min={"0"}
+          max={"1000"}
           type={"number"}
           label={"Amount of Items"}
           htmlFor={"amountOfItems"}
@@ -200,7 +200,6 @@ export const DeliveryFeeCalculatorFragment: React.FunctionComponent<DeliveryFeeC
             setDate(newDate);
           }}
         />
-
         <input
           type="submit"
           value="Calculate delivery fee"

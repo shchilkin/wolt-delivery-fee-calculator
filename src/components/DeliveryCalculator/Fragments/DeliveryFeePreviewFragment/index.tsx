@@ -21,7 +21,10 @@ const DeliveryFeePreviewFragment: React.FunctionComponent<DeliveryFeeCalculatorC
         distance of {deliveryDistance}m
       </p>
       <button
-        className={"mt-4 bg-white text-sky-400 hover:bg-sky-50"}
+        id={"goToTheCalculator"}
+        className={
+          "mt-4 bg-white text-sky-400 hover:bg-sky-50 focus:outline-none focus:ring focus:ring-sky-700"
+        }
         style={{
           borderRadius: "8px",
           padding: "8px 16px",

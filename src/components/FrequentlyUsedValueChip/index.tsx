@@ -19,12 +19,12 @@ const FrequentlyUsedValueChip: React.FunctionComponent<FrequentlyUsedValueChipPr
 }) => {
   return (
     <div
-      className={`bg-sky-400 py-1 ${
+      className={`border-sky-400 border-2 ${
         type === "amountOfItems" ? "px-5" : "px-3"
-      } rounded-full inline-block mx-0.5 cursor-pointer`}
+      } rounded-full inline-block mx-0.5 cursor-pointer flex justify-center items-center`}
       onClick={() => setValue(value)}
     >
-      <span className={"text-sm text-white cursor-inherit"}>
+      <span className={"text-sm font-bold text-sky-400 cursor-inherit py-0.5"}>
         {value}
         {typeToLabel[type]}
       </span>
