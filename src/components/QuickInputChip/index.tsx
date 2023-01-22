@@ -1,6 +1,6 @@
 import React from "react";
 
-interface FrequentlyUsedValueChipProps {
+interface QuickInputChipProps {
   value: number;
   setValue: (value: number) => void;
   type: "cartValue" | "deliveryDistance" | "amountOfItems";
@@ -12,7 +12,7 @@ const typeToLabel = {
   amountOfItems: "",
 };
 
-const FrequentlyUsedValueChip: React.FunctionComponent<FrequentlyUsedValueChipProps> = ({
+const QuickInputChip: React.FunctionComponent<QuickInputChipProps> = ({
   value,
   setValue,
   type,
@@ -32,4 +32,4 @@ const FrequentlyUsedValueChip: React.FunctionComponent<FrequentlyUsedValueChipPr
   );
 };
 
-export default FrequentlyUsedValueChip;
+export default QuickInputChip;

@@ -3,8 +3,8 @@ import Input from "../../../Input";
 import formatDate from "../../../../utils/formatDate";
 import React, { ChangeEvent } from "react";
 import { useSnackbar } from "notistack";
-import FrequentlyUsedValueChip from "../../../FrequentlyUsedValueChip";
-import FrequentlyUsedValueChipContainer from "../../../FrequentlyUsedValueChipChipContainer";
+import FrequentlyUsedValueChip from "../../../QuickInputChip";
+import FrequentlyUsedValueChipContainer from "../../../QuickInputChipContainer";
 import isValidValue from "../../../../utils/isValidValue";
 
 interface DeliveryFeeCalculatorFragmentProps

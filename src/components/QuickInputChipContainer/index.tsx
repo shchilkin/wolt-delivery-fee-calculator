@@ -1,10 +1,10 @@
 import React from "react";
 
-interface FrequentlyUsedValueChipContainerProps {
+interface QuickInputChipProps {
   children: React.ReactNode;
 }
 
-const FrequentlyUsedValueChipContainer: React.FunctionComponent<FrequentlyUsedValueChipContainerProps> = ({
+const QuickInputChipContainer: React.FunctionComponent<QuickInputChipProps> = ({
   children,
 }) => {
   return (
@@ -16,4 +16,4 @@ const FrequentlyUsedValueChipContainer: React.FunctionComponent<FrequentlyUsedVa
   );
 };
 
-export default FrequentlyUsedValueChipContainer;
+export default QuickInputChipContainer;
