@@ -129,7 +129,7 @@ Thanks to [Wolt](https://wolt.com/) for providing the assignment.
 
 ## License
 
-Licensed under the MIT License, Copyright © 2022 Aleksandr Shchilkin See [LICENCE](LICENCE) for more information.
+Licensed under the MIT License, Copyright © 2023 Aleksandr Shchilkin See [LICENCE](LICENCE) for more information.
 
 ## Screenshots
 
